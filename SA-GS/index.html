@@ -201,12 +201,17 @@
         <h2 class="title is-3" style="margin-top: -30px">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Recently, 3D Gaussian Splatting (3DGS) has demonstrated impressive novel view synthesis results, reaching high fidelity and efficiency. 
-            However, strong artifacts can be observed when changing the sampling rate, e.g., by changing focal length or camera distance. 
-            We find that the source for this phenomenon can be attributed to the lack of 3D frequency constraints and the usage of a 2D dilation filter. 
-            To address this problem, we introduce a 3D smoothing filter which constrains the size of the 3D Gaussian primitives based on the maximal sampling frequency induced by the input views, eliminating high frequency artifacts when zooming in. 
-            Moreover, replacing 2D dilation with a 2D Mip filter, which simulates a 2D box filter, effectively mitigates aliasing and dilation issues.
-            Our comprehensive evaluation, including scenarios such as training on single-scale images and testing on multiple scales, validates the effectiveness of our approach.
+            In this paper, we present a \textbf{S}cale-adaptive method for \textbf{A}nti-aliasing \textbf{G}aussian \textbf{S}platting (SA-GS). 
+            While the state-of-the-art method Mip-splatting needs modifying the training procedure of Gaussian splatting, our method functions at test-time and is training-free. 
+            Specifically, SA-GS can be applied to any pretrained Gaussian splatting field as a plugin to significantly improve the field's anti-aliasing performance. 
+            The core technique is to apply 2D scale-adaptive filters to each Gaussian during test time. 
+            As pointed out by Mip-Splatting, observing Gaussians at different frequencies readily leads to mismatches between the Gaussian scales during training and testing. Mip-Splatting resolves this issue using 3D smoothing and 2D Mip filters, which are unfortunately not aware of testing frequency. 
+            In this work, we show that a 2D scale-adaptive filter that is informed of testing frequency can effectively match the Gaussian scale, thus making the Gaussian field remain distributed consistently across different testing frequencies. 
+            When scale inconsistency is eliminated, sampling rates smaller than the scene frequency result in the appearance of conventional jaggedness, 
+            and we propose to integrate the projected 2D Gaussian of each pixel during testing. This integration is actually a limiting case of super-sampling, 
+            but elegantly addresses the heavy computational overhead of super-sampling while achieving significantly improved anti-aliasing performance over vanilla Gaussian Splatting. Through extensive experiments using various settings and both bounded and unbounded scenes, 
+            we show SA-GS performs comparably with Mip-Splatting and significantly outperforms Mip-Splatting if the memory overhead of super-sampling is acceptable. 
+            Note that super-sampling is only effective when our scale-adaptive filtering is activated.
           </p>
         </div>
       </div>
