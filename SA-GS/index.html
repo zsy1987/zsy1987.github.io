@@ -164,8 +164,6 @@
       
           <h2 class="subtitle has-text-centered" style="margin-top: 15px">
             In this work, we show that a 2D scale-adaptive filter that is informed of testing frequency can effectively match the Gaussian scale, thus making the Gaussian field remain distributed consistently across different testing frequencies. 
-            When scale inconsistency is eliminated, sampling rates smaller than the scene frequency result in the appearance of conventional jaggedness, 
-            and we propose to integrate the projected 2D Gaussian of each pixel during testing
           </h2>
         </div>
       </div>
@@ -249,8 +247,7 @@
         <img src="./resources/teaser.png" class="center">
         <div class="content has-text-justified">
           <p style="margin-top: 30px">
-            <b>3D Gaussian Splatting</b> renders images by representing 
-            <b><span style="color: #0a0ae7">Under zoom in, 3D Gaussian Splatting exhibits significant erosion artefacts, while under zoom out, it undergoes dramatic expansion. 
+              Under zoom in, 3D Gaussian Splatting exhibits significant erosion artefacts, while under zoom out, it undergoes dramatic expansion. 
               Mip-Splatting utilizes 3D smoothing and 2D Mip filters to regularize primitives while training. 
               In contrast, our method is training-free and maintains scale consistency using a 2D scale-adaptive filter. 
               We also use super-sampling and integration to obtain more accurate results when zooming out.
