@@ -192,7 +192,6 @@
       </div>
     </div>
     <!--/ Animation. -->
-
   </div>
 </section>
 
@@ -236,6 +235,53 @@
   </div>
 </section>
 
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Method. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="margin-top: -20px">Motivation and methods</h2>
+
+        <img src="./resources/SAGSflow.png" class="center">
+        <div class="content has-text-justified">
+          <p style="margin-top: 30px">
+            All Gaussian Splatting models share this framework for training and rendering, but different models use different strategies to constrain Gaussian primitives. 
+            During training, 3DGS uses (c) in pixel space for stability training, but results in scale inconsistencies at different rendering settings; 
+            Mip-Splatting utilises (a) to restrict the upper Gaussian frequency limit in 3D space, (b) to emulate box filtering in pixel space. 
+            But Mip-Splatting still suffers from scale inconsistency and requires retraining. Our approach is training-free and only operates on the testing flow. 
+            We use (d) in pixel space to maintain the scale consistency of the Gaussian primitives, and further enhance the anti-aliasing capability of 3DGS by applying (e) and (f) to the alpha-blending process.
+          </p>
+        </div>
+
+        <img src="./resources/scale.png" class="center">
+        <div class="content has-text-justified">
+          <p style="margin-top: 30px">
+            The 2D dilation operates on the screen space and aims to ensure a positive characterization of the 2D Gaussian covariance. 
+            However, a fixed 2D dilation can result in scale ambiguities when representing the same scene at different rendering settings, 
+            as shown by the green expansion area. (a) When the Gaussian scale is held constant and the resolution changes, the dilation scale changes inconsistently. 
+            (b) When the Gaussian scale changes and the resolution remains constant, the dilation scale does not change with the Gaussian. 
+            Our 2D scale-adaptive filter ensures that the Gaussian distribution remains consistent across different rendering settings, 
+            as shown by the red expansion area. This keeps the scale consistent with the training setup.
+          </p>
+        </div>
+
+        <img src="./resources/SI.png" class="center">
+        <div class="content has-text-justified">
+          <p style="margin-top: 30px">
+            Our super sampling method, denoted as (a), involves dividing each pixel thread into 9 sub-pixels when traversing the base-ordered Gaussian within a tile. 
+            Each sub-pixel independently undergoes alpha-blending and weights the Gaussian spherical harmonic coefficient according to the sampling results. 
+            (b) is our integration method that diagonalizes the Gaussian covariance matrix by pixel rotation. 
+            This decomposes the integration result into the product of two marginal Gaussian distributions.
+          </p>
+        </div>
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+  </div>
+</section>
 
 
 
