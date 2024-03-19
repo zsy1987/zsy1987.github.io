@@ -163,7 +163,9 @@
           <canvas height=0 class="videoMerge" id="xyalias6Merge"></canvas>
       
           <h2 class="subtitle has-text-centered" style="margin-top: 15px">
-            TL;DR: We introduce a 2D Scale-adaptive filter for 3D Gaussian Splatting (3DGS), eliminating multiple artifacts and achieving alias-free renderings.
+            In this work, we show that a 2D scale-adaptive filter that is informed of testing frequency can effectively match the Gaussian scale, thus making the Gaussian field remain distributed consistently across different testing frequencies. 
+            When scale inconsistency is eliminated, sampling rates smaller than the scene frequency result in the appearance of conventional jaggedness, 
+            and we propose to integrate the projected 2D Gaussian of each pixel during testing
           </h2>
         </div>
       </div>
@@ -248,9 +250,10 @@
         <div class="content has-text-justified">
           <p style="margin-top: 30px">
             <b>3D Gaussian Splatting</b> renders images by representing 
-            <b><span style="color: #0a0ae7">3D Objects</span></b> as <b>Gaussians</b> which are projected onto the image plane followed by <b><span style="color: #e70a0a">2D Dilation</span></b> in screen space as shown in (a). 
-            The method's intrinsic shrinkage bias leads to degenerate 3D Gaussians exceed the sampling limit as illustrated by the &delta; function in (b) while rendering similarly to 2D due to the dilation operation. 
-            However, when changing the sampling rate (via the focal length or camera distance), we observe strong dilation effects (c) and high frequency artifacts (d).
+            <b><span style="color: #0a0ae7">Under zoom in, 3D Gaussian Splatting exhibits significant erosion artefacts, while under zoom out, it undergoes dramatic expansion. 
+              Mip-Splatting utilizes 3D smoothing and 2D Mip filters to regularize primitives while training. 
+              In contrast, our method is training-free and maintains scale consistency using a 2D scale-adaptive filter. 
+              We also use super-sampling and integration to obtain more accurate results when zooming out.
           </p>
         </div>
 
@@ -273,12 +276,7 @@
         <h3 class="title is-4">Comparison wtih 3DGS</h3>
         <div class="content has-text-justified">
           <p>
-            3DGS produces dilation and erosion artifacts due to the use of dilation. 
-            It produces erosion effects when zooming in or moving the camera closer. 
-            This is because the dilated 2D Gaussians become smaller in screen space, rendering object structures thinner than they actually appear.
-            Conversely, screen space dilation produces dilation artifacts when zooming out or moving away from the scene. 
-            In this case, dilated 2D Gaussian become bigger in screen space, rendering object structures thicker than they actually appear.
-            In contrast, our method is free of such artifacts by introducing a 3D smoothing filter and a 2D Mip filter.
+            1
           </p>
         </div>
         
