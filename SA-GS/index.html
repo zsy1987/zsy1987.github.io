@@ -163,7 +163,7 @@
           <canvas height=0 class="videoMerge" id="xyalias6Merge"></canvas>
       
           <h2 class="subtitle has-text-centered" style="margin-top: 15px">
-            TL;DR: We introduce a 3D smoothing filter and a 2D Mip filter for 3D Gaussian Splatting (3DGS), eliminating multiple artifacts and achieving alias-free renderings.
+            TL;DR: We introduce a 2D Scale-adaptive filter for 3D Gaussian Splatting (3DGS), eliminating multiple artifacts and achieving alias-free renderings.
           </h2>
         </div>
       </div>
@@ -201,7 +201,7 @@
         <h2 class="title is-3" style="margin-top: -30px">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            In this paper, we present a \textbf{S}cale-adaptive method for \textbf{A}nti-aliasing \textbf{G}aussian \textbf{S}platting (SA-GS). 
+            In this paper, we present a Scale-adaptive method for Anti-aliasing Gaussian Splatting (SA-GS). 
             While the state-of-the-art method Mip-splatting needs modifying the training procedure of Gaussian splatting, our method functions at test-time and is training-free. 
             Specifically, SA-GS can be applied to any pretrained Gaussian splatting field as a plugin to significantly improve the field's anti-aliasing performance. 
             The core technique is to apply 2D scale-adaptive filters to each Gaussian during test time. 
