@@ -108,7 +108,7 @@ Number.prototype.clamp = function(min, max) {
 function resizeAndPlay(element)
 {
   var cv = document.getElementById(element.id + "Merge");
-  cv.width = element.videoWidth/2;
+  cv.width = element.videoWidth/3;
   cv.height = element.videoHeight;
   element.play();
   element.style.height = "0px";  // Hide video without stopping it
