@@ -27,9 +27,9 @@ function playVids(videoId) {
             position = ((e.touches[0].pageX - bcr.x) / bcr.width);
         }
 
-        videoMerge.addEventListener("mousemove",  trackLocation, false); 
-        videoMerge.addEventListener("touchstart", trackLocationTouch, True);
-        videoMerge.addEventListener("touchmove",  trackLocationTouch, True);
+        videoMerge.addEventListener("mousemove",  trackLocation, True); 
+        videoMerge.addEventListener("touchstart", trackLocationTouch, false);
+        videoMerge.addEventListener("touchmove",  trackLocationTouch, false);
 
 
         function drawLoop() {
