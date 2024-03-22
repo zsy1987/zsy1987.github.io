@@ -103,6 +103,8 @@
       </tr>
     </tbody></table>
 
+
+
       <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
         <!-- write Research interests here -->
         <tr>
@@ -117,6 +119,8 @@
         </tr>
       </tbody></table>
 
+
+      
       <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
         <tr>
           <td style="padding:20px;width:100%;vertical-align:middle">
@@ -149,6 +153,46 @@
 
     <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody></tbody>
       
+      <!-- IA-GS-->
+      <tr onmouseout="randla_stop()" onmouseover="randla_stop()" bgcolor="#ffffd0"> <!-- bgcolor="#ffffd0" --> 
+        <td style="padding:20px;width:25%;vertical-align:middle">
+          <div class="one">
+            <div class="two" id='randla_image'><video  width=100% height=100% muted autoplay loop>
+            <source src="research/SAGS.png" type="video/png">
+            Your browser does not support the video tag.
+            </video></div>
+            <img src='research/SAGS.png' width="160" height="160">
+          </div>
+          <script type="text/javascript">
+            function randla_start() {
+              document.getElementById('randla_image').style.opacity = "1";
+            }
+
+            function randla_stop() {
+              document.getElementById('randla_image').style.opacity = "0";
+            }
+            randla_stop()
+          </script>
+        </td>
+        <td style="padding:20px;width:75%;vertical-align:middle">
+          <a href="https://zsy1987.github.io/SA-GS">
+            <span class="papertitle">SA-GS: Scale-Adaptive Gaussian Splatting for Training-Free Anti-Aliasing</span>
+          </a>
+          <br>
+          <strong><em>Jv Zheng</em></strong>
+          <br>
+            2023/12
+          <br>
+          <a><em>code(coming soon)</em></a>
+          <p></p>
+          <p>
+            <!-- RandLA-Net(CVPR2020) is a light net which can process efficient semantic segmentation for <strong>3D point clouds</strong>,  -->
+            <!-- and SQN(ECCV2022) is based on RandLA-Net and achieves promising performance on seven large-scale open datasets under <strong>weak supervision schemes</strong>.  -->
+            A coarse-to-fine training strategy was used to train the Gaussian field. Minimum size and maximum number of Gaussians are set for each order, resulting in a compact and anti-aliased representation.
+          </p>
+        </td>
+      </tr>
+
       <!-- Gaussian splatting -->
       <tr onmouseout="gs_stop()" onmouseover="gs_stop()" bgcolor="#ffffd0"> <!-- bgcolor="#ffffd0" --> 
         <td style="padding:20px;width:25%;vertical-align:middle">
@@ -189,45 +233,6 @@
         </td>
       </tr>
 
-      <!-- MultiScale Gaussian Splatting -->
-      <tr onmouseout="randla_stop()" onmouseover="randla_stop()" bgcolor="#ffffd0"> <!-- bgcolor="#ffffd0" --> 
-        <td style="padding:20px;width:25%;vertical-align:middle">
-          <div class="one">
-            <div class="two" id='randla_image'><video  width=100% height=100% muted autoplay loop>
-            <source src="research/MultiSG.png" type="video/png">
-            Your browser does not support the video tag.
-            </video></div>
-            <img src='research/MultiSG.png' width="160" height="160">
-          </div>
-          <script type="text/javascript">
-            function randla_start() {
-              document.getElementById('randla_image').style.opacity = "1";
-            }
-
-            function randla_stop() {
-              document.getElementById('randla_image').style.opacity = "0";
-            }
-            randla_stop()
-          </script>
-        </td>
-        <td style="padding:20px;width:75%;vertical-align:middle">
-          <a>
-            <span class="papertitle">Multiscale Gaussian Splatting for Compact and Anti-alised Representation</span>
-          </a>
-          <br>
-          <strong><em>Xiaowei Song</em></strong>
-          <br>
-            2023/12
-          <br>
-          <a><em>code(coming soon)</em></a>
-          <p></p>
-          <p>
-            <!-- RandLA-Net(CVPR2020) is a light net which can process efficient semantic segmentation for <strong>3D point clouds</strong>,  -->
-            <!-- and SQN(ECCV2022) is based on RandLA-Net and achieves promising performance on seven large-scale open datasets under <strong>weak supervision schemes</strong>.  -->
-            A coarse-to-fine training strategy was used to train the Gaussian field. Minimum size and maximum number of Gaussians are set for each order, resulting in a compact and anti-aliased representation.
-          </p>
-        </td>
-      </tr>
 
       <!-- STEM EXAM -->
       <tr onmouseout="stemExam_stop()" onmouseover="stemExam_stop()" > <!-- bgcolor="#ffffd0" --> 
@@ -252,7 +257,7 @@
         </td>
         
         <td style="padding:20px;width:75%;vertical-align:middle">
-          <a href="https://zsy1987.github.io/SA-GS">
+          <a>
             <span class="papertitle">LLM Science Exam - Use LLMs to answer difficult science questions</span>
           </a>
           <br>
